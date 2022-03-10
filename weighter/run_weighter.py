@@ -69,7 +69,7 @@ if __name__ == "__main__":
 
 	# Drop any extra entries
 	weights = weights.drop('NaT')
-
+    weights = weights.drop('count_nonzero')
 	# If there are new entries create the weighter object
 	if len(weights) > np.count_nonzero(weights['Record']):
 		# Initialize with dataframe of weights, google sheet, and slack object
